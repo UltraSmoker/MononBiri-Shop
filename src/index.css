@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --font-serif-bn: "Tiro Bangla", ui-serif, Georgia, serif;
+  --font-cinzel: "Cinzel", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #0b0a09;
+    color: #f5f5f4;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-bn {
+    font-family: var(--font-serif-bn);
+    text-wrap: balance;
+  }
+
+  .font-cinzel {
+    font-family: var(--font-cinzel);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Obsidian & Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141210;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #44403c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
+
+@keyframes extreme-shake {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  15% { transform: translate3d(-4px, 2px, 0) rotate(-0.4deg); }
+  30% { transform: translate3d(4px, -2px, 0) rotate(0.4deg); }
+  45% { transform: translate3d(-3px, -2px, 0) rotate(-0.2deg); }
+  60% { transform: translate3d(3px, 2px, 0) rotate(0.2deg); }
+  75% { transform: translate3d(-2px, 1px, 0); }
+}
+
+.animate-extreme-shake {
+  animation: extreme-shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-extreme-shake {
+    animation: none;
+  }
+}
